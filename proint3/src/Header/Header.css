@@ -1,0 +1,20 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 10px;
+    background-color: darkmagenta;
+    height: 100px;
+}
+
+.listaHeader{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.logo{
+    height: 80px;
+    border-radius: 80%;
+}
