@@ -10,7 +10,6 @@
 }
 
 .contenedor_pelicula{
-    margin-top: 15px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -20,14 +19,53 @@
 
 .titulo_pelicula{
     color: #DADADA;
-    font-size: 25px;
+    font-size: 27px;
+}
+
+.boton_titulo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+    height: 30px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+.boton_descripcion{
+    height: 25px;
+    font-size: 9px;
+    border: 2px solid #DADADA;
+    border-radius: 10px;
+    background-color: #202020;
+    color: #DADADA;
+}
+
+.portada_detalle{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-top: -10px;
 }
 
 .portada_pelicula{
-    border: 5px solid black;
+    border: 5px solid #202020;
     border-radius: 4px;
     height: 350px;
     width: 225px;
+}
+
+.detalle_pelicula{
+    display: none;
+    position: absolute;
+    top: 10px;
+    width: 200px;
+    height: 300px;
+    margin-left: 15px;
+    color: #DADADA;
+    background-color: #1A8E84;
+    border: 2px solid #202020;
 }
 
 .portada_pelicula:hover {-webkit-transform:scale(1.07);transform:scale(1.07);}

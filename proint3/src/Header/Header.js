@@ -5,12 +5,14 @@ function Header() {
         <header className="header">
             <div className="header_izq">
                 <img className="logo" src="/img/logo1.png"/>
-                <h1 className="nombre_web">Nombre Pagina</h1>
+                <h1 className="nombre_web">VOLKS MOVIE</h1>
             </div>
             <div className="header_der">
                 <ul className="listaHeader">
                     <li>Pagina Principal</li>
+                    <li>|</li>
                     <li>Favoritos</li>
+                    <li>|</li>
                     <li>Categorias</li>
                 </ul>
                 <div className="info_perfil">

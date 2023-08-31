@@ -17,6 +17,8 @@
     flex-wrap: wrap;
     gap: 20px;
     color: #DADADA;
+    font-size: 25px;
+    margin-right: 20px;
 }
 
 .header_izq, .header_der{
@@ -58,4 +60,5 @@
 
 .nombre_perfil{
     color: #DADADA;
+    font-weight: bold;
 }
