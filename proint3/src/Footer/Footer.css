@@ -1,0 +1,16 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color: #1A8E84;
+    height: 100px;
+    border: 1px solid #DADADA;
+    border-radius: 10px;
+}
+
+.texto_footer{
+    color: #DADADA;
+}

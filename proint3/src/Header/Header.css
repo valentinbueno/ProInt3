@@ -3,18 +3,54 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     padding: 0 10px;
-    background-color: darkmagenta;
-    height: 100px;
+    background-color: #1A8E84;
+    height: 125px;
+    border: 1px solid #DADADA;
+    border-radius: 10px;
 }
 
 .listaHeader{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 20px;
+    color: #DADADA;
+}
+
+.header_izq, .header_der{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .logo{
-    height: 80px;
+    height: 100px;
     border-radius: 80%;
+}
+
+.foto_perfil{
+    height: 70px;
+    border-radius: 80%;
+}
+
+.info_perfil{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.nombre_web{
+    color: #DADADA;
+}
+
+.nombre_perfil{
+    color: #DADADA;
 }
