@@ -5,3 +5,30 @@ body{
 h1{
     color: #DADADA;
 }
+
+li{
+    list-style: none;
+}
+
+.titulo_categorias{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.nombre_categoria{
+    font-size: 32px;
+}
+
+.ver_mas{
+    height: 25px;
+    background-color: #202020;
+    border: 3px solid #1A8E84;
+    border-radius: 10px;
+    color: #DADADA;
+}
+
+.ver_mas:hover {-webkit-transform:scale(1.3);transform:scale(1.3);}
+.ver_mas {overflow:hidden;}
