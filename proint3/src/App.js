@@ -1,18 +1,26 @@
 import Categorias from "./Components/Categorias/Categorias";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
+import Home from "./screens/Home/Home";
 
 function App() {
   return (
-    <>
-        <Header />
-        <section className="titulo_categorias"><h1 className="nombre_categoria">Peliculas mas populares</h1><button className="ver_mas">Ver mas...</button></section>
-        <Categorias />
-        <section className="titulo_categorias"><h1 className="nombre_categoria">Peliculas en tendencia</h1><button className="ver_mas">Ver mas...</button></section>
-        <Categorias />
-        <Footer />
-    </>    
-        );
+    <React.Fragment>
+      <Header/>
+      <Switch>
+        <Route path="/" component={Home}/>
+        <Route path="/DetallePelicula" component={}/>
+        <Route path="/DetalleSerie" component={}/>
+        <Route path="/Favorites" component={}/>
+        <Route path="/Loader" component={}/>
+        <Route path="/NoEncontrada" component={}/>
+        <Route path="/ResultadoBusqueda" component={}/>
+        <Route path="/VerPopulares" component={}/>
+        <Route path="/VerTendencia" component={}/>
+      </Switch>
+      <Footer/>
+    </React.Fragment>
+  );
 }
 
 export default App
