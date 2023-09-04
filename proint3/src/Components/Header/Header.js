@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Header.css"
+import {Link} from 'react-router-dom'
 function Header() {
     return (
         <header className="header">
@@ -9,9 +10,9 @@ function Header() {
             </div>
             <div className="header_der">
                 <ul className="listaHeader">
-                    <li>Pagina Principal</li>
+                    <li><Link to='/'>Pagina Principal</Link></li>
                     <li>|</li>
-                    <li>Favoritos</li>
+                    <li><Link to='/Favorites'>Favoritos </Link></li>
                     <li>|</li>
                     <li>Categorias</li>
                 </ul>
