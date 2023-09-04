@@ -68,5 +68,24 @@
     border: 2px solid #202020;
 }
 
-.portada_pelicula:hover {-webkit-transform:scale(1.07);transform:scale(1.07);}
+.boton_detalle{
+    display: none;
+    position: absolute;
+    top: 160px;
+    margin-left: 65px;
+    background-color: #202020;
+    color: #DADADA;
+    border: 2px solid #1A8E84;
+    border-radius: 10px;
+}
+.portada_pelicula:hover +.boton_detalle{
+    display: block;
+}
+.boton_detalle:hover{
+    display:block;
+}
+.boton_detalle:hover + .portada_pelicula{
+    -webkit-transform:scale(1.07);transform:scale(1.07);filter: blur(1px);
+}
+.portada_pelicula:hover {-webkit-transform:scale(1.07);transform:scale(1.07);filter: blur(1px);}
 .portada_pelicula {overflow:hidden;}

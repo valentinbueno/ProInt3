@@ -32,6 +32,7 @@ mostrar_descripcion(){
                             <p className="detalle_pelicula">Esta es la descripcion de la Pelicula</p>
                         </div>
                     : false}
+                    <button className="boton_detalle">Detalle pelicula</button>
                 </div>
                 <section className="boton_titulo">
                     <p className="titulo_pelicula">{this.props.titulo}</p>
