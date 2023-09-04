@@ -1,6 +1,6 @@
-import Categorias from "./Categorias/Categorias";
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
+import Categorias from "./Components/Categorias/Categorias";
+import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header";
 
 function App() {
   return (
