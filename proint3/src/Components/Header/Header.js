@@ -10,11 +10,11 @@ function Header() {
             </div>
             <div className="header_der">
                 <ul className="listaHeader">
-                    <li><Link to='/'>Pagina Principal</Link></li>
+                    <li className="boton_header"><Link to='/' className="link">Pagina Principal</Link></li>
                     <li>|</li>
-                    <li><Link to='/Favorites'>Favoritos </Link></li>
+                    <li className="boton_header"><Link to='/Favorites' className="link">Favoritos </Link></li>
                     <li>|</li>
-                    <li>Categorias</li>
+                    <li className="boton_header">Categorias</li>
                 </ul>
                 <div className="info_perfil">
                     <img className="foto_perfil" src="/img/logoPredeterminado.jpg"/>

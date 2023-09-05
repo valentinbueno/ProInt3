@@ -1,5 +1,6 @@
-import "../Categorias.css"
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom'
+
 class CategoriasHijo extends Component{
 
 constructor(props){
@@ -32,7 +33,7 @@ mostrar_descripcion(){
                             <p className="detalle_pelicula">Esta es la descripcion de la Pelicula</p>
                         </div>
                     : false}
-                    <button className="boton_detalle">Detalle pelicula</button>
+                    <button className="boton_detalle"><Link to="/DetallePelicula/id/:id" className="link">Detalle pelicula</Link></button>
                 </div>
                 <section className="boton_titulo">
                     <p className="titulo_pelicula">{this.props.titulo}</p>

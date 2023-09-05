@@ -1,11 +1,11 @@
 import React from "react";
-import CategoriasHijo from "../../Components/Categorias/CategoriasHijo.js/CategoriasHijo";
-import Categorias from "../../Components/Categorias/Categorias";
+import Favoritos from "../../Components/Favoritos/Favoritos";
 
 function Favorites() {
     return(
         <React.Fragment>
-            <p>Pagina de fav</p>
+            <section className="titulo_categorias"><h1 className="nombre_categoria">Peliculas Favoritas</h1></section>
+            <Favoritos/>
         </React.Fragment>
     );   
 }
