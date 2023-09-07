@@ -5,7 +5,15 @@ class CategoriasHijo extends Component{
 
 constructor(props){
     super(props)
-    this.state = {description:false, texto:"Descripcion"}
+    this.state = {description:false, texto:"Descripcion", pelicula:{}}
+}
+componentDidMount(){
+    fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=5af2599bc48eedc0c872d98ac992b8e3")
+    .then(response => response.json())
+    .then(data =>this.setState({
+        pelicula: data
+    }))
+    .catch(error => console.log('El problema esta en'+ error))
 }
 
 mostrar_descripcion(){
@@ -24,6 +32,8 @@ mostrar_descripcion(){
 }
 
     render(){
+        console.log('Me monte');
+        console.log(this.state);
     return (
             <article className="contenedor_pelicula">
                 <div className="portada_detalle">
@@ -41,6 +51,8 @@ mostrar_descripcion(){
                 </section>
             </article>
     )}
+    
 }
+
 
 export default CategoriasHijo
