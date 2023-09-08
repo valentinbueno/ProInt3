@@ -11,7 +11,7 @@ componentDidMount(){
     fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=5af2599bc48eedc0c872d98ac992b8e3")
     .then(response => response.json())
     .then(data =>this.setState({
-        pelicula: data
+        pelicula: data.results,
     }))
     .catch(error => console.log('El problema esta en'+ error))
 }
@@ -36,6 +36,7 @@ mostrar_descripcion(){
         console.log(this.state);
     return (
             <article className="contenedor_pelicula">
+                
                 <div className="portada_detalle">
                     <img className="portada_pelicula" src={this.props.foto}/>
                     {this.state.description ?
