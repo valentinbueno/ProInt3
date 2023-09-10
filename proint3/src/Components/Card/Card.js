@@ -1,5 +1,5 @@
 import React from 'react'
-import CategoriasHijo from './CategoriasHijo.js/CategoriasHijo'
+import CategoriasHijo from '../Characters/Characters'
 function Categorias() {
     return (
         <section className="contenedor">
@@ -10,6 +10,9 @@ function Categorias() {
             <CategoriasHijo/>
         </section>
     )
+
+
+    
 }
 
 export default Categorias

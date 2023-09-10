@@ -1,5 +1,5 @@
 import React from "react";
-import Categorias from "../../Components/Categorias/Categorias";
+import Categorias from "../../Components/Card/Card";
 import {Link} from 'react-router-dom'
 function Home() {
     return(

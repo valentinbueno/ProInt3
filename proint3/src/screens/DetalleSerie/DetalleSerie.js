@@ -1,6 +1,6 @@
 import React from "react";
-import CategoriasHijo from "../../Components/Categorias/CategoriasHijo.js/CategoriasHijo";
-import Categorias from "../../Components/Categorias/Categorias";
+import Characters from "../../Components/Characters/Characters";
+import Card from "../../Components/Card/Card";
 
 function DetalleSerie() {
     return(
@@ -9,12 +9,6 @@ function DetalleSerie() {
         </React.Fragment>
     );   
 }
-
-
-
-
-
-
 
 
 

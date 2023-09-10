@@ -1,4 +1,4 @@
-import Categorias from "./Components/Categorias/Categorias";
+import Card from "./Components/Card/Card";
 import React from "react";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
