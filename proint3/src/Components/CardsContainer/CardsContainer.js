@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
-import Card from '../Card/Card';
+import CardMovies from '../Card/CardMovies'
+import CardSeries from '../Card/CardSeries';
+
 import {Link} from 'react-router-dom'
 
-class Characters extends Component{
+
+
+
+//valen:
+
+class CardsContainer extends Component{
 
 constructor(props){
     super(props)
@@ -64,4 +71,4 @@ mostrar_descripcion(){
 
 
 
-export default Characters
+export default CardsContainer

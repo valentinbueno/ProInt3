@@ -1,4 +1,3 @@
-import Card from "./Components/Card/Card";
 import React from "react";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
@@ -19,15 +18,15 @@ function App() {
     <React.Fragment>
       <Header/>
       <Switch>
-        <Route path="/" component={Home} exact="true"/>
-        <Route path="/DetallePelicula/id/:id" component={DetallePelicula} exact="true"/>
-        <Route path="/DetalleSerie/id/:id" component={DetalleSerie} exact="true"/>
+        <Route path="/" component={Home} exact={true}/>
+        <Route path="/DetallePelicula/id/:id" component={DetallePelicula} exact={true}/>
+        <Route path="/DetalleSerie/id/:id" component={DetalleSerie} exact={true}/>
         <Route path="/Favorites" component={Favorites}/>
         <Route path="/Loader" component={Loader}/>
         <Route path="" component={NoEncontrada}/>
         <Route path="/ResultadoBusqueda" component={ResultadoBusqueda}/>
-        <Route path="/VerPopulares" component={VerPopulares} exact="true"/>
-        <Route path="/VerTendencia" component={VerTendencia} exact="true"/>
+        <Route path="/VerPopulares" component={VerPopulares} exact={true}/>
+        <Route path="/VerTendencia" component={VerTendencia} exact={true}/>
       </Switch>
       <Footer/>
     </React.Fragment>
