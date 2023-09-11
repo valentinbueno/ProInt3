@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 
-
-
-class CardSeries extends Component {
+class CardUpMovies extends Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -12,4 +10,4 @@ class CardSeries extends Component {
 
     
 }
- export default CardSeries
+ export default CardUpMovies

@@ -1,11 +1,12 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-class CardMovies extends Component {
+class CardPopMovies extends Component {
     constructor(props) {
       super(props);
       this.state = {
         textoFavoritos: "Agregar a favoritos",
+        textoDescripcion: "Descripcion"
       };
     }
 
@@ -20,18 +21,19 @@ class CardMovies extends Component {
             textoFavoritos: "Quitar de favoritos",
           });
         }
-    }
+    } 
+    // Falta completar el tema de favoritos, ver clase de ale devuelta xq copie pero no termine todo
     mostrar_descripcion(){
       if(this.state.description === false){
           this.setState({
               description:true,
-              texto:"Ocultar"
+              textoDescripcion:"Ocultar"
           })
       }
       else{
           this.setState({
               description:false,
-              texto:"Descripcion"
+              textoDescripcion:"Descripcion"
           })
       }
   }
@@ -73,8 +75,9 @@ class CardMovies extends Component {
     
         localStorage.setItem("pelicula", peliculasFinales);
     }
-
+ // Falta completar el tema de favoritos, ver clase de ale devuelta xq copie pero no termine todo
     render() {
+      
         return (
           <article className="contenedor_pelicula">
             <div className="portada_detalle">
@@ -85,16 +88,13 @@ class CardMovies extends Component {
                   </div>
               : false}
               <button className="boton_detalle"><Link to={`/Detail/${this.props.datosPelicula.id}`} className="link">Detalle pelicula</Link></button>
-              <div>
-                <p className="titulo_pelicula">{this.props.datosPelicula.title}</p>
-              </div>
             </div>
             <section className="boton_titulo">
-              <p className="titulo_pelicula">{this.props.titulo}</p>
-              <button onClick={() => this.mostrar_descripcion()} className="boton_descripcion" >{this.state.texto}</button>
+              <p className="titulo_pelicula">{this.props.datosPelicula.title}</p>
+              <button onClick={() => this.mostrar_descripcion()} className="boton_descripcion" >{this.state.textoDescripcion}</button>
             </section>
           </article>
         );
     }
 }
-export default CardMovies;
+export default CardPopMovies;

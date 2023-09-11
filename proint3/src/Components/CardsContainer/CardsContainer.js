@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import CardMovies from "../../Components/Card/CardMovies";
+import CardPopMovies from "../Card/CardPopMovies";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 class CardsContainer extends Component {
   constructor() {
     super();
     this.state = {
-      peliculas: [],
+      peliculasPop: [],
       peliculasFavoritas: [],
     };
   }
@@ -16,18 +16,18 @@ class CardsContainer extends Component {
       .then((res) => res.json())
       .then((data) =>
         this.setState({
-          peliculas: data.results,
+          peliculasPop: data.results,
         })
       )
       .catch();
   }
 
   borrarPeliOSerie(id) {
-      let peliculasFiltradas = this.state.peliculas.filter(
+      let peliculasFiltradas = this.state.peliculasPop.filter(
         (unaPelicula) => unaPelicula.id !== id
       );
       this.setState({
-        peliculas: peliculasFiltradas,
+        peliculasPop: peliculasFiltradas,
       });
   }
 
@@ -54,20 +54,19 @@ class CardsContainer extends Component {
       .then((res) => res.json())
       .then((data) =>
       this.setState({
-        peliculas: data.results,
+        peliculasPop: data.results,
       })
       )
       .catch();
   }
 
   render() {
-    console.log(this.state.peliculasFavoritas);
     return (
       <React.Fragment>
         <section className="contenedor">
-          {this.state.peliculas.map((unaPelicula, idx) => {
+          {this.state.peliculasPop.map((unaPelicula, idx) => {
             if (idx < 5) {
-              return (<CardMovies
+              return (<CardPopMovies
               key={unaPelicula.title + idx}
               datosPelicula={unaPelicula}
               borrar={(id) => this.borrarPeliOSerie(id)}
@@ -75,7 +74,6 @@ class CardsContainer extends Component {
             />)
             } else {return (null)}
           })}
-        
         </section>
       </React.Fragment>
     );
