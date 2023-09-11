@@ -1,74 +1,160 @@
-import React, {Component} from 'react';
-import CardMovies from '../Card/CardMovies'
-import CardSeries from '../Card/CardSeries';
+import React, { Component } from "react";
+import CardMovies from "../../Components/Card/CardMovies";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-import {Link} from 'react-router-dom'
+class CardsContainer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      peliculas: [],
+      peliculasFavoritas: [],
+    };
+  }
 
-
-
-
-//valen:
-
-class CardsContainer extends Component{
-
-constructor(props){
-    super(props)
-    this.state = {description:false, texto:"Descripcion", pelicula:[]}
-}
-
-
-mostrar_descripcion(){
-    if(this.state.description === false){
+  componentDidMount() {
+    fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=5af2599bc48eedc0c872d98ac992b8e3')
+      .then((res) => res.json())
+      .then((data) =>
         this.setState({
-            description:true,
-            texto:"Ocultar"
+          peliculas: data.results,
         })
-    }
-    else{
-        this.setState({
-            description:false,
-            texto:"Descripcion"
-        })
-    }
-}
+      )
+      .catch();
+  }
 
-    render(){
-        console.log('Me monte');
-        console.log(this.state);
+  borrarPeliOSerie(id) {
+      let peliculasFiltradas = this.state.peliculas.filter(
+        (unaPelicula) => unaPelicula.id !== id
+      );
+      this.setState({
+        peliculas: peliculasFiltradas,
+      });
+  }
+
+   verMas(id){
+    let peliculasFiltradas = this.state.peliculas.filter(
+      (peliculas) => peliculas.id !== id
+    );
+    this.setState({
+      peliculas: peliculasFiltradas,
+    }) 
+  }
+
+   filtrarPeliOSerie(textoInput){
+    let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
+        return pelicula.name.toLowerCase().includes(textoInput.toLowerCase());
+    })
+    this.setState({
+      peliculas: peliculasFiltradas
+    })
+  }
+
+  verTodas() {
+    fetch(this.state)
+      .then((res) => res.json())
+      .then((data) =>
+      this.setState({
+        peliculas: data.results,
+      })
+      )
+      .catch();
+  }
+
+  render() {
+    console.log(this.state.peliculasFavoritas);
     return (
-
+      <React.Fragment>
+        <section className="contenedor">
+          {this.state.peliculas.map((unaPelicula, idx) => {
+            if (idx < 5) {
+              return (<CardMovies
+              key={unaPelicula.title + idx}
+              datosPelicula={unaPelicula}
+              borrar={(id) => this.borrarPeliOSerie(id)}
+              verMas={(id) => this.verMas(id)}
+            />)
+            } else {return (null)}
+          })}
         
-            <article className="contenedor_pelicula">
-
-        
-        {/* {
-            this.state.pelicula.map((Obj, i)=>{
-                console.log(this.state);
-                if (i<5) {           // Con esta línea llevamos solo 5 peliculas y no las 20 que guardamos en this.state
-                    return( <CategoriasHijo title={ this.props.esPeli ? Obj.title : Obj.name} poster={Obj.poster_path} description={Obj.overview} id={Obj.id}/> )
-                } else{ return (null)}     
-            })
-        } */}
-                
-                <div className="portada_detalle">
-                    <img className="portada_pelicula" src={this.props.foto}/>
-                    {this.state.description ?
-                        <div>
-                            <p className="detalle_pelicula">Esta es la descripcion de la Pelicula</p>
-                        </div>
-                    : false}
-                    <button className="boton_detalle"><Link to="/DetallePelicula/id/:id" className="link">Detalle pelicula</Link></button>
-                </div>
-                <section className="boton_titulo">
-                    <p className="titulo_pelicula">{this.props.titulo}</p>
-                    <button onClick={() => this.mostrar_descripcion()} className="boton_descripcion" >{this.state.texto}</button>
-                </section>
-            </article>
-    )}
-    
+        </section>
+      </React.Fragment>
+    );
+  }
 }
 
+export default CardsContainer;
 
 
 
-export default CardsContainer
+
+
+
+
+
+
+
+
+// import React, { Component } from "react";
+// import {Link} from 'react-router-dom'
+// import CardMovies from '../../Components/Card/CardMovies'
+// import CardsContainer from "../../Components/CardsContainer/CardsContainer";
+
+
+
+// class Home extends Component {
+//     constructor(){
+//         super();
+//         this.state = {
+//             peliculas: [],
+//             tv: []
+//         };
+//     }
+
+// componentDidMount(){
+//     fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=5af2599bc48eedc0c872d98ac992b8e3")
+//     .then((response)=> response.json() )
+//     .then((data)=> 
+//     this.setState({
+//         peliculas: data.results
+
+
+//     }))
+
+//     .catch(error => console.log(error));
+//     fetch("https://api.themoviedb.org/3/tv/top_rated?api_key=5af2599bc48eedc0c872d98ac992b8e3")
+//     .then((response)=> response.json())
+//     .then((data)=> 
+//     this.setState({
+//         tv: data.results
+//     }))
+//     .catch(error => console.log(error));
+// }
+
+
+
+// render() {
+//     return (
+//       <React.Fragment>
+
+
+//         <section className="titulo_categorias">
+            
+//           {this.state.peliculas.map((unaPelicula, idx) => {
+//             if (idx < 5) {
+//               return (<CardMovies
+//               key={unaPelicula.title + idx}
+//               datosPelicula={unaPelicula}
+            
+//             />)
+//             } else {return (null)}
+//           })}
+
+//         </section>
+//         <Link className="linkADetalle" to="/VerTodas">Ver todas</Link>
+         
+//     </React.Fragment>
+
+//     );
+//         }}
+
+// export default Home
