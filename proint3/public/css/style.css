@@ -20,6 +20,7 @@ li{
 
 .nombre_categoria{
     font-size: 32px;
+    color: #DADADA;
 }
 
 .ver_mas{
@@ -77,7 +78,7 @@ li{
 
 .titulo_pelicula{
     color: #DADADA;
-    font-size: 27px;
+    font-size: 20px;
 }
 
 .boton_titulo{
