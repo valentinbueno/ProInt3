@@ -87,7 +87,7 @@ class CardPopMovies extends Component {
                     <p className="detalle_pelicula">{this.props.datosPelicula.overview}</p>
                   </div>
               : false}
-              <button className="boton_detalle"><Link to={`/Detail/${this.props.datosPelicula.id}`} className="link">Detalle pelicula</Link></button>
+              <button className="boton_detalle"><Link to={`/DetallePelicula/id/${this.props.datosPelicula.id}`} className="link">Detalle pelicula</Link></button>
             </div>
             <section className="boton_titulo">
               <p className="titulo_pelicula">{this.props.datosPelicula.title}</p>

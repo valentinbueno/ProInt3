@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import CardPopMovies from "../../Components/Card/CardPopMovies";
 
 
-class VerPopulares extends Component {
+class VerEstrenos extends Component {
     constructor(props){
         super(props);
         this.state={
             peliculasEst: [],
-            n_pagina: 1, //dato al que lo voy sumando para poder agregar las paginas
+            n_pagina: 1,
         }
 
     }
     componentDidMount(){
-        fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=5af2599bc48eedc0c872d98ac992b8e3')
+        fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=5af2599bc48eedc0c872d98ac992b8e3')
             .then((res) => res.json())
             .then((data) =>
                 this.setState({
@@ -20,7 +20,6 @@ class VerPopulares extends Component {
             })
         )
         .catch();
-
     }
     render(){
         return(
@@ -37,12 +36,6 @@ class VerPopulares extends Component {
             </section>
             </React.Fragment>
         )
-    }
-    
+    }   
 }
-
-
-
-
-
-export default VerPopulares
+export default VerEstrenos;

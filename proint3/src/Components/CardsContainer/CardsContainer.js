@@ -12,7 +12,8 @@ class CardsContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=5af2599bc48eedc0c872d98ac992b8e3')
+    let Url= this.props.url
+    fetch(Url)
       .then((res) => res.json())
       .then((data) =>
         this.setState({
