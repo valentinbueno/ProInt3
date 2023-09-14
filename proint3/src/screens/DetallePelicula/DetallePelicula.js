@@ -21,6 +21,7 @@ class DetallePelicula extends Component{
     }
     render(){
         console.log(this.state.peliculasPop);
+        console.log(this.state.peliculasPop.genres);
         return(
             <React.Fragment>
                 <p className="nombre_categoria">{this.state.peliculasPop.title}</p>
@@ -28,20 +29,19 @@ class DetallePelicula extends Component{
                     <img src={`https://image.tmdb.org/t/p/w500/${this.state.peliculasPop.poster_path}`} alt="imagenPelicula"/>
                 </div>
                 <div>
-                    <ul>
+                    
                     <li>Valoracion:{this.state.peliculasPop.vote_average}</li>
                     <li>Fecha de Estreno:{this.state.peliculasPop.release_date}</li>
                     <li>Duracion:{this.state.peliculasPop.runtime} mins</li>
                     <li>Sinopsis:{this.state.peliculasPop.overview}</li>
-                    <ul>Genero:
-                        <li>{this.state.peliculasPop.genres.map((generos, idx) => {
-                            return (generos=generos.name )
-                            })}
-                        </li>
-                    <ul/>
+                    <ul>
+                         {
+                          //this.state.peliculasPop.genres.map(generos => <li>{generos.name}</li>)
+                        } 
+                    </ul>
+                    
                 </div>
             </React.Fragment>
         );
-    
-
-export default DetallePelicula
+                    }}
+export default DetallePelicula;

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import CardPopMovies from "../../Components/Card/CardPopMovies";
-
+import VerPopular from "./VerPopulares.css";
 
 class VerPopulares extends Component {
     constructor(props){
         super(props);
         this.state={
-            peliculasEst: [],
+            peliculasPop: [],
             n_pagina: 1, //dato al que lo voy sumando para poder agregar las paginas
         }
 
@@ -16,17 +16,19 @@ class VerPopulares extends Component {
             .then((res) => res.json())
             .then((data) =>
                 this.setState({
-                    peliculasEst: data.results,
+                    peliculasPop: data.results,
             })
         )
         .catch();
-
+    }
+    agregarPeliculas(){
+        
     }
     render(){
         return(
             <React.Fragment>
             <section className="contenedor">
-            {this.state.peliculasEst.map((unaPelicula, idx) => {
+            {this.state.peliculasPop.map((unaPelicula, idx) => {
                 if (idx < 100) {
                 return (<CardPopMovies
                 key={unaPelicula.title + idx}
