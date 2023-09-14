@@ -24,6 +24,8 @@ function App() {
         <Route path="/ResultadoBusqueda" component={ResultadoBusqueda}/>
         <Route path="/VerPopulares" component={VerPopulares} exact={true}/>
         <Route path="/VerEstrenos" component={VerEstrenos} exact={true}/>
+        <Route path = "/searchResults/:search" component = {ResultadoBusqueda}/>
+
         <Route path="" component={NoEncontrada}/>
       </Switch>
       <Footer/>
