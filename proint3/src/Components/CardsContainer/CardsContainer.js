@@ -32,14 +32,14 @@ class CardsContainer extends Component {
       });
   }
 
-   verMas(id){
-    let peliculasFiltradas = this.state.peliculas.filter(
-      (peliculas) => peliculas.id !== id
-    );
-    this.setState({
-      peliculas: peliculasFiltradas,
-    }) 
-  }
+  //  verMas(id){
+  //   let peliculasFiltradas = this.state.peliculas.filter(
+  //     (peliculas) => peliculas.id !== id
+  //   );
+  //   this.setState({
+  //     peliculas: peliculasFiltradas,
+  //   }) 
+  // }
 
    filtrarPeliOSerie(textoInput){
     let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
@@ -50,16 +50,16 @@ class CardsContainer extends Component {
     })
   }
 
-  verTodas() {
-    fetch(this.state)
-      .then((res) => res.json())
-      .then((data) =>
-      this.setState({
-        peliculasPop: data.results,
-      })
-      )
-      .catch();
-  }
+  // verTodas() {
+  //   fetch(this.state)
+  //     .then((res) => res.json())
+  //     .then((data) =>
+  //     this.setState({
+  //       peliculasPop: data.results,
+  //     })
+  //     )
+  //     .catch();
+  // }
 
   render() {
     return (

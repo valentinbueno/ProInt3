@@ -27,7 +27,7 @@ class VerPopulares extends Component {
     render(){
         return(
             <React.Fragment>
-            <section className="contenedor">
+            <section className="contenedorVerMas">
             {this.state.peliculasPop.map((unaPelicula, idx) => {
                 if (idx < 100) {
                 return (<CardPopMovies

@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
-    background-color: #1A8E84;
+    background-color: #19b6a9;
     height: 100px;
     border: 1px solid #DADADA;
     border-radius: 10px;
@@ -16,4 +16,5 @@
     color: #DADADA;
     font-size: 25px;
     margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }

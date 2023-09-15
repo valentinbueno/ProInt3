@@ -24,16 +24,18 @@ class DetallePelicula extends Component{
         console.log(this.state.peliculasPop.genres);
         return(
             <React.Fragment>
+                
                 <p className="nombre_categoria">{this.state.peliculasPop.title}</p>
+                <section className="padre2">
                 <div>
-                    <img src={`https://image.tmdb.org/t/p/w500/${this.state.peliculasPop.poster_path}`} alt="imagenPelicula"/>
+                    <img className="fotodetalle" src={`https://image.tmdb.org/t/p/w500/${this.state.peliculasPop.poster_path}`} alt="imagenPelicula"/>
                 </div>
                 <div>
                     
-                    <li>Valoracion:{this.state.peliculasPop.vote_average}</li>
-                    <li>Fecha de Estreno:{this.state.peliculasPop.release_date}</li>
-                    <li>Duracion:{this.state.peliculasPop.runtime} mins</li>
-                    <li>Sinopsis:{this.state.peliculasPop.overview}</li>
+                    <li className="detalles">Valoracion:{this.state.peliculasPop.vote_average}</li>
+                    <li className="detalles">Fecha de Estreno:{this.state.peliculasPop.release_date}</li>
+                    <li className="detalles">Duracion:{this.state.peliculasPop.runtime} mins</li>
+                    <li className="detalles">Sinopsis:{this.state.peliculasPop.overview}</li>
                     <ul>
                          {
                           //this.state.peliculasPop.genres.map(generos => <li>{generos.name}</li>)
@@ -41,6 +43,7 @@ class DetallePelicula extends Component{
                     </ul>
                     
                 </div>
+                </section>
             </React.Fragment>
         );
                     }}

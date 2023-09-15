@@ -30,7 +30,7 @@ class VerEstrenos extends Component {
             <React.Fragment>
             
             <button onClick={this.agregarPeliculas()}className="boton_detalle">Ver mas</button>
-            <section className="contenedor">
+            <section className="contenedorVerMas">
             {this.state.peliculasEst.map((unaPelicula) => {
                 return (<CardPopMovies
                 key={unaPelicula.title}

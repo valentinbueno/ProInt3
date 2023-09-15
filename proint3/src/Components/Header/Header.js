@@ -8,8 +8,10 @@ function Header() {
     return (
         <header className="header">
             <div className="header_izq">
-                <img className="logo" src="/img/moviestar3.jpg"/>
-                <h1 className="nombre_web">MovieStar </h1>
+                <img className="logo" src="/img/moviestar4.jpg" alt="imagenLogo" />
+                <h1 className="nombre_web"><Link to='/' className="link">MovieStar</Link></h1>
+
+                
             </div>
            
             <div className="header_der">
@@ -22,7 +24,7 @@ function Header() {
                 </ul>
                  <Search/>
                 <div className="info_perfil">
-                    <img className="foto_perfil" src="/img/logoPredeterminado.jpg"/>
+                    <img className="foto_perfil" src="/img/logoPredeterminado.jpg" alt='imagenPerfil'/>
                     <p className="nombre_perfil">Juan</p>
                 </div>
 

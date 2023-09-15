@@ -5,25 +5,16 @@ class CardPopMovies extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        textoFavoritos: "Agregar a favoritos",
-        textoDescripcion: "Descripcion"
+        textoDescripcion:"Descripcion",
+
+        textoBoton: "Agregar a favoritos",
+       
+        
       };
     }
 
-    componentDidMount() {
-        let peliculasConseguidas = localStorage.getItem("pelicula");
-        if (peliculasConseguidas === null) {
-          this.setState({
-            textoFavoritos: "Agregar a favoritos",
-          });
-        } else if (peliculasConseguidas.includes(this.props.datosPelicula.id)) {
-          this.setState({
-            textoFavoritos: "Quitar de favoritos",
-          });
-        }
-    } 
-    // Falta completar el tema de favoritos, ver clase de ale devuelta xq copie pero no termine todo
-    mostrar_descripcion(){
+    // descripcion
+    mostrardescripcion(){
       if(this.state.description === false){
           this.setState({
               description:true,
@@ -38,43 +29,67 @@ class CardPopMovies extends Component {
       }
   }
 
-    agregarQuitarFavoritos() {
-        let arrayPeliculas = [this.props.datosPelicula.id];
-        let peliculasConseguidas = localStorage.getItem("pelicula");
-        let peliculasFinales = "";
-    
-        if (peliculasConseguidas === null) {
-          peliculasConseguidas = [];
-          peliculasFinales = JSON.stringify(arrayPeliculas);
-          this.setState({
-            textoFavoritos: "Quitar de favoritos",
-          });
+  //// FAVORITOS:
+
+
+  componentDidMount(){
+    //Chequear si el id está en el array de favoritos
+    let recuperoStorage = localStorage.getItem('favoritos');
+
+    if (recuperoStorage !== null){
+        let favoritos = JSON.parse(recuperoStorage);
+
+        //si está el id, cambiar el texto del botón
+        if(favoritos.includes(this.props.datosPelicula.id)){
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
         }
-    
-        let arrayPeliculasFinales = "";
-    
-        if (peliculasConseguidas.length !== 0) {
-          let arrayPeliculasConseguidas = JSON.parse(peliculasConseguidas);
-          arrayPeliculasFinales = arrayPeliculasConseguidas.concat(arrayPeliculas);
-          peliculasFinales = JSON.stringify(arrayPeliculasFinales);
-          this.setState({
-            textoFavoritos: "Quitar de favoritos",
-          });
-        }
-    
-        if (peliculasConseguidas.includes(this.props.datosPelicula.id)) {
-          let arrayPeliculasConseguidas = JSON.parse(peliculasConseguidas);
-          arrayPeliculasFinales = arrayPeliculasConseguidas.filter(
-            (item) => item !== this.props.datosPelicula.id
-          );
-          peliculasFinales = JSON.stringify(arrayPeliculasFinales);
-          this.setState({
-            textoFavoritos: "Agregar a favoritos",
-          });
-        }
-    
-        localStorage.setItem("pelicula", peliculasFinales);
+
     }
+}
+
+//Si el id está en el array debe sacarlo.
+//Si el id NO ESTÁ en el array debe agregarlo.
+
+agregarQuitarFavoritos(id){
+    //Guardar un id en un array y luego en localStorage
+    let favoritos = [];
+    let recuperoStorage = localStorage.getItem('favoritos');
+
+    if (recuperoStorage !== null){
+        favoritos = JSON.parse(recuperoStorage);
+    }
+
+    if(favoritos.includes(id)){
+        //Si el id está en el array. 
+        //Sacarlo del array.
+        favoritos = favoritos.filter( unId => unId !== id)
+
+        //Mostrarle un cambio al usuario en la pantalla.
+        this.setState({
+            textoBoton : "Agregar a favoritos"
+        })
+
+    } else {
+        //Si el id NO ESTÁ en el array. 
+        favoritos.push(id);
+
+        this.setState({
+            textoBoton: "Quitar de favoritos",
+        })
+
+    }
+
+    //Guardar en localStorage
+    let favoritosToString = JSON.stringify(favoritos);        
+    localStorage.setItem('favoritos', favoritosToString);
+
+    console.log(localStorage);
+
+}
+
+
  // Falta completar el tema de favoritos, ver clase de ale devuelta xq copie pero no termine todo
     render() {
       
@@ -91,8 +106,12 @@ class CardPopMovies extends Component {
             </div>
             <section className="boton_titulo">
               <p className="titulo_pelicula">{this.props.datosPelicula.title}</p>
-              <button onClick={() => this.mostrar_descripcion()} className="boton_descripcion" >{this.state.textoDescripcion}</button>
+              <button onClick={() =>this.mostrardescripcion()} type="button" className="boton_descripcion" >{this.state.textoDescripcion}</button>
+
             </section>
+            <button onClick={()=>this.agregarQuitarFavoritos(this.props.datosPelicula.id)} type='button' className="boton_descripcion">{this.state.textoBoton}</button>
+
+
           </article>
         );
     }
