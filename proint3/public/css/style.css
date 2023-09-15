@@ -40,7 +40,7 @@ li{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    height: 440px;
+    height: auto;
 
 }
 
@@ -52,7 +52,7 @@ li{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    height: 1700px;
+    height: auto;
 }
 
 
@@ -68,6 +68,8 @@ li{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .portada_detalle{
