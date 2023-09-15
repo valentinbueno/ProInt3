@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-import CardsContainer from "../../Components/CardsContainer/CardsContainer";
+import CardPopMovies from "../../Components/Card/CardPopMovies"
 
 class ResultadoBusqueda extends Component {
     constructor(props){
@@ -26,26 +26,34 @@ class ResultadoBusqueda extends Component {
 
 
 
-render(){
-    return(
-        <>
-        <section>    
-        <h2>Resultados de búsqueda: {this.props.match.params.search}</h2>
+      render(){
+        return(
+        <React.Fragment>
+
+            {this.state.peliculasPop.length > 0 ?
+            <>
+                <h2 className="nombre_categoria">Resultados de: {this.props.match.params.search}</h2>
+
+               
+        
+        <section className="contenedor">
 
 
-        {this.state.peliculasPop.length >0 ? 
+                {this.state.peliculasPop.map((peli, idx) => {
+                if (idx < 5) {
+                return (<CardPopMovies key={peli + idx} datosPelicula={peli}/>)
+                } else {return (null)}
+            })}    
+
+            
+        </section> </>:
         
+         <h3>No se encontro ningun resultado para {this.props.match.params.search} </h3>}
         
-        
-        
-        
-        <CardsContainer info={this.state.peliculasPop} esPelicula={true} esBusqueda={true}/> : "No se encontraron pelicul que coincidan con la búsqueda"}
-        </section>
+        </React.Fragment>
+        )
+    }
     
-        </>
-    );
-}
-
 }
 
 export default ResultadoBusqueda;
