@@ -48,7 +48,7 @@ class ResultadoBusqueda extends Component {
             
         </section> </>:
         
-         <h3>No se encontro ningun resultado para {this.props.match.params.search} </h3>}
+         <p className="titulo_pelicula">No se encontro ningun resultado para {this.props.match.params.search} </p>}
         
         </React.Fragment>
         )

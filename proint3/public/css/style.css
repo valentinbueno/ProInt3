@@ -64,6 +64,13 @@ li{
     width: 225px;
 }
 
+.subtitulo {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #1a8e84;
+    font-size: 20px;
+
+}
+
 .detalle_pelicula{
     display: block;
     position: absolute;
@@ -78,7 +85,7 @@ li{
 
 .titulo_pelicula{
     color: #DADADA;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .boton_titulo{
@@ -115,6 +122,15 @@ li{
 .link{
     color: #DADADA;
     text-decoration: none;
+}
+
+
+
+.botonbusqueda{
+    height: 20px;
+    border-radius: 5px;
+    border: solid 2px turquoise;
+    background-color: rgb(252, 252, 252);
 }
 
 .detalle_pelicula:hover +.portada_pelicula{-webkit-transform:scale(1.07);transform:scale(1.07);filter: blur(1px);}

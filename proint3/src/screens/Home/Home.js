@@ -14,8 +14,8 @@ class Home extends Component {
   render(){
     return(
       <React.Fragment>
-        <Search/>
-        <p> La mejor plataforma para ver tus peliculas favoritas </p>
+       
+        <p className="subtitulo"> La mejor plataforma para ver tus peliculas favoritas </p>
        
             <section className="titulo_categorias"><h1 className="nombre_categoria">Peliculas mas populares</h1><Link to='/VerPopulares'><button className="ver_mas">Ver mas...</button></Link></section>
             <CardsContainer url="https://api.themoviedb.org/3/movie/top_rated?api_key=5af2599bc48eedc0c872d98ac992b8e3"></CardsContainer>

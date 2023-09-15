@@ -56,6 +56,10 @@
 
 .nombre_web{
     color: #DADADA;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    
 }
 
 .nombre_perfil{
