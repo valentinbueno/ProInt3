@@ -78,6 +78,10 @@ li{
     text-align: center;
     margin-top: -10px;
 }
+.error{
+    width:900px;
+    height:700px;
+}
 
 .portada_pelicula{
     border: 5px solid #202020;
@@ -187,3 +191,9 @@ li{
 
 .ver_mas:hover {-webkit-transform:scale(1.3);transform:scale(1.3);}
 .ver_mas {overflow:hidden;}
+@media (max-width: 752){
+    .contenedor{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

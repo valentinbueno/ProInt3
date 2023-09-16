@@ -20,7 +20,6 @@ function Header() {
                     <li>|</li>
                     <li className="boton_header"><Link to='/Favorites' className="link">Favoritos </Link></li>
                     <li>|</li>
-                    <li className="boton_header">Categorias</li>
                 </ul>
                  <Search/>
                 <div className="info_perfil">

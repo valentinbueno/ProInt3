@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import CardPopMovies from "../../Components/Card/CardPopMovies";
-import VerPopular from "./VerPopulares.css";
 
 class VerPopulares extends Component {
     constructor(props){
@@ -21,9 +20,7 @@ class VerPopulares extends Component {
         )
         .catch();
     }
-    agregarPeliculas(){
-        
-    }
+
     render(){
         return(
             <React.Fragment>

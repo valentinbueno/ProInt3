@@ -4,20 +4,10 @@ import React from "react";
 function NoEncontrada() {
     return(
         <React.Fragment>
-            <img src="img/crossing-sign-error-404-png.webp"></img>
+            <img class='error'src="img/crossing-sign-error-404-png.webp" alt="imagen error"></img>
         </React.Fragment>
     );   
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

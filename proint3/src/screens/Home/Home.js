@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import CardsContainer from "../../Components/CardsContainer/CardsContainer";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import VerPopulares from "../VerPopulares/VerPopulares";
 
 class Home extends Component {
   constructor(){

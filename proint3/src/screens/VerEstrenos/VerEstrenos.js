@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CardPopMovies from "../../Components/Card/CardPopMovies";
-import VerEstreno from "./VerEstreno.css";
+import CardsContainer from "../../Components/CardsContainer/CardsContainer";
 
 class VerEstrenos extends Component {
     constructor(props){
@@ -8,10 +8,13 @@ class VerEstrenos extends Component {
         this.state={
             peliculasEst: [],
             n_pagina: 1,
+            valor:10
+   
         }
 
     }
     componentDidMount(){
+        console.log('En component ');
         this.agregarPeliculas()
     }
     agregarPeliculas(){
@@ -19,27 +22,35 @@ class VerEstrenos extends Component {
         .then((res) => res.json())
         .then((data) =>
             this.setState({
+                
                 peliculasEst: this.state.peliculasEst.concat(data.results),
-                n_pagina: this.state.n_pagina + 1
+                n_pagina: this.state.n_pagina + 1,
+                //valor:this.state.valor + 5 --> bucle infinito
             })
         )
         .catch(error => console.log(error));
     }
+    verMas(){
+        this.setState({
+            largo_peliculas : this.state.largo_peliculas + 5
+        })
+    }
     render(){
+        console.log(this.state.peliculasEst);
+        let valor= this.state.valor
         return(
-            <React.Fragment>
+        <section className="contenedor">
+        <button onClick={this.agregarPeliculas()}className="boton_descripcion">Ver mas</button>
+                
+                {this.state.peliculasEst.map((peli, idx) => {
+                    if (idx < valor) {
+                    return (<CardPopMovies key={peli + idx} datosPelicula={peli}/>)
+                    } else {return (null)}
+            })}    
+
             
-            <button onClick={this.agregarPeliculas()}className="boton_detalle">Ver mas</button>
-            <section className="contenedorVerMas">
-            {this.state.peliculasEst.map((unaPelicula) => {
-                return (<CardPopMovies
-                key={unaPelicula.title}
-                datosPelicula={unaPelicula}
-                />)
-            })}
-            </section>
-            </React.Fragment>
-        )
-    }   
+        </section> 
+        )   
+    }
 }
 export default VerEstrenos;

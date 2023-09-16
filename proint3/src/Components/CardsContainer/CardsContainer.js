@@ -10,7 +10,6 @@ class CardsContainer extends Component {
       peliculasFavoritas: [],
     };
   }
-
   componentDidMount() {
     let Url= this.props.url
     fetch(Url)
@@ -22,45 +21,6 @@ class CardsContainer extends Component {
       )
       .catch();
   }
-
-  borrarPeliOSerie(id) {
-      let peliculasFiltradas = this.state.peliculasPop.filter(
-        (unaPelicula) => unaPelicula.id !== id
-      );
-      this.setState({
-        peliculasPop: peliculasFiltradas,
-      });
-  }
-
-  //  verMas(id){
-  //   let peliculasFiltradas = this.state.peliculas.filter(
-  //     (peliculas) => peliculas.id !== id
-  //   );
-  //   this.setState({
-  //     peliculas: peliculasFiltradas,
-  //   }) 
-  // }
-
-   filtrarPeliOSerie(textoInput){
-    let peliculasFiltradas = this.state.peliculas.filter(pelicula => {
-        return pelicula.name.toLowerCase().includes(textoInput.toLowerCase());
-    })
-    this.setState({
-      peliculas: peliculasFiltradas
-    })
-  }
-
-  // verTodas() {
-  //   fetch(this.state)
-  //     .then((res) => res.json())
-  //     .then((data) =>
-  //     this.setState({
-  //       peliculasPop: data.results,
-  //     })
-  //     )
-  //     .catch();
-  // }
-
   render() {
     return (
       <React.Fragment>
@@ -70,8 +30,6 @@ class CardsContainer extends Component {
               return (<CardPopMovies
               key={unaPelicula.title + idx}
               datosPelicula={unaPelicula}
-              borrar={(id) => this.borrarPeliOSerie(id)}
-              verMas={(id) => this.verMas(id)}
             />)
             } else {return (null)}
           })}
